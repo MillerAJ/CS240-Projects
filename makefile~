@@ -1,0 +1,15 @@
+
+program2: heap.o player.o program.o 
+	g++ heap.o player.o  -o program2
+
+program.o:
+	g++ -c program
+
+heap.o:
+	g++ -c Heap.cpp -o heap.o
+
+player.o:
+	g++ -c Player.cpp  -o player.o
+clean:
+	rm -f *.o lab1
+
