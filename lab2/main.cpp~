@@ -1,0 +1,30 @@
+#include "user.h"
+#include <iostream>
+using namespace std;
+bool done= false;
+string blah;
+int main(){
+User newUser;
+while( done==false){
+cout<<"Please enter a command (Create, Update, View, Favorites, or Quit):"<<endl;
+cin>>blah;
+	if(blah == "Create"){
+		newUser.create();
+	}else if (blah == "Update"){
+		newUser.update();
+	}else if (blah == "View"){
+		newUser.view();
+	}else if (blah == "Favorites"){
+		newUser.favorites();
+	}else if (blah == "Quit"){
+		done = newUser.quit();
+	}else{
+		cout<<"INVALID COMMAND"<<endl;
+		cout<<""<<endl;
+	}
+}
+
+}
+
+
+

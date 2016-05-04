@@ -1,0 +1,14 @@
+
+
+lab2: lab2.o user.o
+	g++ lab2.o user.o  -o lab2
+
+lab2.o:
+	g++ -c main.cpp -o lab2.o
+
+user.o:
+	g++ -c user.cpp  -o user.o
+
+clean:
+	rm -f *.o lab2
+

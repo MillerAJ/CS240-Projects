@@ -1,0 +1,17 @@
+#ifndef USER_H
+#define USER_H
+#include <iostream>
+using namespace std;
+class User{
+	public:
+		string lastName;
+		string firstName;
+		int age;
+		string favMovies[5];
+		void create(void);
+		void update(void);
+		void favorites(void);
+		void view(void);
+		bool quit(void);
+};
+#endif
