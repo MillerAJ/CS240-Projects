@@ -1,0 +1,40 @@
+#include "Map.h"
+#include <stdio.h>
+//#include <string.h>
+
+Map::Map(std::string filename){
+
+	heapSize = 0;
+	std::string name, xCoor, yCoor;
+	char line[];
+	char* pieces;
+	ifstream myFile;
+
+	const char* c = filename.c_str();
+	try{
+	myFile.open(c);
+	if (myFile.is_open()){	
+	while(!myFile.eof()){
+		
+		getline(myFile, line);
+		pieces = strtok (line, " ")
+		while (pieces != NULL){
+			std::cout<<pieces<<std::endl;
+			token = std::strtok(NULL, " ");
+		}
+		//int monVal = atoi(money.c_str());	
+		
+		
+	}
+	
+	myFile.close();
+	} else {
+		cout<<"error w/ file"<<endl;
+	}
+	} catch(exception& e) {cout<<"something went wrong"<<endl;}
+
+}
+
+City* findByName(std::string){
+
+}

@@ -1,0 +1,28 @@
+#ifndef MAP_H
+#define MAP_H
+#include "City.h"
+
+class Map{
+	private:
+
+	
+	public:
+		Map(std::string);
+		City* findByName(std::string);
+
+
+
+
+};
+
+
+
+
+
+
+
+
+
+
+
+#endif

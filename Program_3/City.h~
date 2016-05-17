@@ -1,0 +1,24 @@
+#ifndef CITY_H
+#define CITY_H
+
+
+class City{
+	public:
+		City(std::string, int, int);
+		std::string getName(); //return city name
+		int getXCoor(); //returns city X coordinate
+		int getYCoor(); //returns city Y coordinate
+		list<City*> getAdjacent(); //returns copy of adjacency list
+		bool operator<(City &c); //compares cities by name using the string operator < method
+
+		
+
+	private:
+
+
+};
+
+
+
+#endif
+
