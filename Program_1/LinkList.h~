@@ -1,0 +1,116 @@
+#ifndef LINKLIST_H
+#define LINKLIST_H
+#include "User.h"
+
+
+template <class T>
+class Node{
+	private:
+		
+	public:
+		Node<T>* next;
+		T data;
+		Node<T>() {this->next = NULL; this->data = NULL;}
+		Node<T>(T dat) {this->next = NULL; this->data = dat;}
+		Node<T>(T dat, Node<T>* nex) {this->next = nex; this->data = dat;}
+
+		void setData(T blah){
+			this->data = blah;
+		}
+	
+		T getData(){
+			return this-> data;
+		}
+};
+
+template <class T>
+class LinkList{
+
+	private:
+		Node<T>* head;
+		int iterator;
+	public:
+		LinkList();
+		LinkList<T>(const LinkList<T>&);
+		~LinkList();
+
+		void add(T);
+		T* get();
+		void update(Node<T>*, T);
+		void remove(T);
+};
+
+template <class T>
+LinkList<T>::LinkList(){
+	head=NULL;
+	iterator = 0;
+	}
+
+template <class T>
+LinkList<T>::LinkList(const LinkList<T> &blah){
+	Node<T>* head = blah->head;
+	iterator = 0;
+}
+
+template <class T>
+LinkList<T>::~LinkList(){
+	delete[] this->head;
+	
+}
+
+template <class T>	
+void LinkList<T>::add(T thing){
+	Node<T> newNode = Node<T>(thing);
+	if (this->head == NULL){
+		this->head = &(newNode);
+		this->iterator++;
+	}		
+	else{
+
+		Node<T>* temp = this->head;
+		while(temp->next != NULL){
+			temp = temp->next;
+		}
+		temp->next = &(newNode);
+		this->iterator++;
+
+	}
+	
+}
+
+template <class T>
+T* LinkList<T>::get(){
+	int index = (this->iterator) - 1;
+	T retVal;
+	
+	if(this->head != NULL){
+		Node<T>* temp = this->head;
+		for(int i=0;i<=index;i++){
+			retVal = temp->data;
+		}
+	}	
+	return &(retVal);	
+}
+
+template <class T>
+void LinkList<T>::update(Node<T>* upNode, T thing){
+	upNode->data = thing;	
+}
+
+template <class T>
+void LinkList<T>::remove(T dead){
+
+	if (this->head != NULL){
+		T temp = this->head;	
+		while(temp->getNext() != dead){
+			temp = temp->getNext();
+		}
+		temp->setNext(NULL);
+	}	
+}
+		//void operator<<(T);
+		//void operator++();
+	
+
+
+#endif

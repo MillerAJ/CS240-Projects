@@ -1,0 +1,6 @@
+#include "card.h"
+
+int main(){
+Card nineOHearts(9,3);
+
+}

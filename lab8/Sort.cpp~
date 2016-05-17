@@ -1,0 +1,10 @@
+#include "Sort.h"
+
+int* sortA(int* a);
+		int* sortB(int* b);
+		
+	
+	
+		int* heapsort(int* myArray, int size);
+		int* mergesort(int* myArray, int size);
+		int* quicksort(int* myArray, int high, int low);

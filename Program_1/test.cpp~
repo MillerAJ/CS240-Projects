@@ -1,0 +1,22 @@
+#include "User.h"
+#include "LinkList.h"
+//#include "debug.h"
+using namespace std;
+
+int main(){
+LinkList<User> major;
+
+
+User guy1("Bob", "Burns", 31, "Bob", "Bob");
+User guy2("Bill", "Burns", 31, "Bill", "Bill");
+
+
+major.add(guy1);
+major.add(guy2);
+std::cout<<"made it"<<endl;
+std::cout<<major.get()->getUsername()<<std::endl;
+std::cout<<"blah"<<std::endl;
+
+
+}
+

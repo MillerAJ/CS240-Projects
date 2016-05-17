@@ -1,0 +1,120 @@
+#include "BSTree.h"
+#include<cstddef>
+#include<iostream>
+
+BSTree::BSTree(){
+root= NULL;
+}
+
+BSTree::~BSTree(){
+	delete root;
+}
+/*
+bool BSTree::insert(){
+return true;
+}
+*/
+bool BSTree::find(int val){/*
+	bool done = false;
+	Node* newNode = new Node(val);
+	
+		if(root==NULL){
+			return false;
+		} else {
+			while(done==false){
+			Node* temp = root;
+
+			if(val>temp->value){
+
+				if(temp->right->value==val){
+					return true;
+					
+				} else if(temp->right==NULL){
+					return false;
+				} else {	
+					temp = temp->right;
+				}
+			} else {
+		
+				if(temp->left->value==val){
+		
+					return true;
+					
+				} else if(temp->left==NULL){
+					return false;
+				}else {
+			
+					temp = temp->left;
+				}
+			}
+		}
+	}return true;
+*/
+return true;
+}
+
+
+
+bool BSTree::insert(int val){/*
+	bool done = false;
+	Node* newNode = new Node(val);
+	
+		if(root==NULL){
+			root = newNode;
+		} else {
+		while(done==false){
+		
+			Node* temp = root;
+		 
+			if(val>temp->value){
+		
+				if(temp->right==NULL){
+					newNode->parent = temp;
+					temp->right=newNode;
+					done = true;
+					
+				} else {	
+					temp = temp->right;
+				}
+			} else {
+		
+				if(temp->left==NULL){
+		
+					newNode->parent = temp;
+					temp->left=newNode;
+					done = true;
+					
+				} else {
+		
+					temp = temp->left;
+				}
+			}
+		}
+	}return true;*/
+
+return true;
+}
+
+bool BSTree::empty(){
+return true;
+}
+
+/*
+bool BSTree::insert(int key) {
+    root = insertNode(root, new Node(key));
+}
+
+
+
+Node* BSTree::insertNode(Node* currentParent, Node* newNode) {
+
+    if (currentParent == null) {
+        return newNode;
+    } else if (newNode.key > currentParent.key) {
+        currentParent.right = insertNode(currentParent.right, newNode);
+    } else if (newNode.key < currentParent.key) {
+        currentParent.left = insertNode(currentParent.left, newNode);
+    }
+
+    return currentParent;
+}*/

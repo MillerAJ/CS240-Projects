@@ -1,0 +1,90 @@
+#include "LinkList.h"
+#include "User.h"	
+
+/*
+	O *obj = (O*) new O; ---- returns a pointer to an obj of type O
+	obj->data  ==  (*obj).data
+	obj->next  (not obj->&next)
+	//this means that if you want to deref next, you must
+	obj->next->data  or (*(*obj).next).data
+	*/
+
+template <class T>
+LinkList<T>::LinkList(){
+	head=NULL;
+	iterator = 0;
+	}
+
+template <class T>
+LinkList<T>::LinkList(const LinkList<T> &blah){
+	Node<T>* head = blah->head;
+	iterator = 0;
+}
+
+template <class T>
+LinkList<T>::~LinkList(){
+	delete head;
+}
+
+template <class T>	
+void LinkList<T>::add(T thing){
+	Node<T> newNode = Node<T>(thing);
+	if (this->head == NULL){
+		this->head = &(newNode);
+	}		
+	else{
+		Node<T>* temp = this->head;	
+		while(temp->next != NULL){
+			temp = temp->next;
+		}
+		temp->next = &(newNode);
+	}
+	
+}
+
+template <class T>
+T LinkList<T>::get(int index){
+	T retVal;
+	
+	if(this->head != NULL){
+		T temp = this->head;
+		for(int i=0;i<=index;i++){
+			retVal = temp;
+		}
+	}	
+	return retVal;	
+}
+
+template <class T>
+void LinkList<T>::update(Node<T>* upNode, T thing){
+	upNode->data = thing;	
+}
+
+template <class T>
+void LinkList<T>::remove(T dead){
+
+	if (this->head != NULL){
+		T temp = this->head;	
+		while(temp->getNext() != dead){
+			temp = temp->getNext();
+		}
+		temp->setNext(NULL);
+	}	
+}
+
+/*
+void LinkList::operator<<(T blah){
+	this->add(T);
+
+}
+
+void LinkList::operator++(){
+	this->iterator+=1;
+}
+
+
+*/
+
+
+
+

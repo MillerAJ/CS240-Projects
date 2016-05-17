@@ -1,0 +1,99 @@
+#include "MovieChart.h"
+#include "User.h"
+#include <iostream>
+using namespace std;
+
+MovieChart::MovieChart(){
+
+}
+
+void MovieChart::login(){
+	string user,pass;
+	cout<<"Please enter your username:"<<this->getFirstName()<<endl;
+	cin>>user;
+	cout <<"Please enter you password:"<<this->getLastName()<<endl;
+	cin>>pass;
+	this->setCurrentUser();
+
+}
+
+void MovieChart::view(){
+cout<<"First name:"<<this->getFirstName()<<endl;;
+cout <<"Last name:"<<this->getLastName()<<endl;
+cout<<"Age:"<<this->getAge()<<endl;
+cout<<"Favorite Movies"<<endl;
+cout<<""<<endl;
+	for(int i = 0;i<5;i++){
+	cout<< this->getFavMovie(i)<<endl;
+	}
+}
+
+bool MovieChart::quit(){
+return true;
+}
+
+void MovieChart::favorites(){
+string blah;
+	cout<<"Please input your new Favorite 5 Movies"<<endl;
+	cin.ignore();
+	for(int i =0;i<6;i++){
+		if(i!=0){
+		getline(cin,blah);
+		this->setFavMovie(i-1,blah);
+		}
+	}
+}
+
+
+void MovieChart::update(){
+string blah,name;
+int age;
+cout<<"Please enter which attribute to update (First, Last, Age):"<<endl;
+cin>>blah;
+cout<<"Please enter the new value: ";
+	if(blah == "First"){
+		cin>>name;
+		this->setFirstName(name);
+	}else if (blah == "Last"){
+		cin>>name;
+		this->setLastName(name);
+	}else if (blah == "Age"){
+		cin>>age;
+		this->setAge(age);
+	}else{
+		cout<<"INVALID COMMAND"<<endl;
+		cout<<""<<endl;
+	}
+}
+
+
+void MovieChart::create(){
+string fname, lname, pass, user;
+int age;
+cout<<"Please enter first name:"<<endl;
+cin>>fname;
+
+cout << "Please enter last name:"<<endl;
+cin>>lname;
+
+cout<<"Please enter age:"<<endl;
+cin>>age; 
+
+cout<<"Please enter your username:"<<endl;
+cin>>user;
+cout<<"Please enter your password:"<<endl;
+cin>>pass;
+User newUser(fname, lname, age, user, pass);
+this->setCurrentUser(* newUser);
+}
+
+void MovieChart::setCurrentUser(User * user){
+	this->current_user = user;
+}
+
+User * MovieChart::getCurrentUser(){
+	return this->current_user;
+}
+
+
+

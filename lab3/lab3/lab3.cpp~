@@ -1,0 +1,39 @@
+#include "User.h"
+#include "MovieChart.h"
+#include <iostream>
+using namespace std;
+
+int main(){
+string blah;
+bool done=false;
+MovieChart major = new MovieChart;
+while(done==false){
+cout<<endl;
+cout<<"Please enter a command (Create, Update, View, Favorites, or Quit):"<<endl;
+cin>>blah;
+	if(blah == "Create"){
+		major.create();
+	}else if (blah == "Update"){
+		major.update();
+	}else if (blah == "View"){
+		major.view();
+	}else if (blah == "Favorites"){
+		major.favorites();
+	}else if (blah == "Quit"){
+		done = major.quit();
+	}else if (blah == "Login"){
+		major.login();
+	}else if (blah == "Logout"){
+		major.logout();
+	}else{
+		cout<<"INVALID COMMAND"<<endl;
+	}
+}
+
+}
+
+
+
+
+
+

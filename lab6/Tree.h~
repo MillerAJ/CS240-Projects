@@ -1,0 +1,43 @@
+#ifndef BSTREE_H
+#define BSTREE_H
+
+
+class BSTree{
+	private:
+		class Node{
+			private:
+				int value;
+				Node* parent;
+				Node* right;
+				Node* left;
+
+			public:
+				Node(int val){
+					value = val;
+					parent = NULL;
+					right = NULL;
+					left = NULL;
+				}
+				Node(){
+					value = NULL;
+					parent = NULL;
+					right = NULL;
+					left = NULL;
+				}
+	
+
+		};
+	Node* root;	
+
+	public:
+	BSTree();
+	bool empty(); //true if tree is empty, false otherwise
+	bool insert(int);
+	bool find(int);
+
+
+};
+
+
+
+#endif

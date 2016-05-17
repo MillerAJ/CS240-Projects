@@ -1,0 +1,24 @@
+#include "BSTree.h"
+#include <iostream>
+int main(){
+BSTree myTree;
+//std::cout<<"tree made"<<std::endl;
+//std::cout<<myTree.getRoot()->left<<std::endl;
+
+myTree.insert(10);
+
+
+
+myTree.insert(7);
+
+
+myTree.insert(14);
+
+
+myTree.insert(5);
+
+myTree.insert(6);
+myTree.find(6);
+myTree.empty();
+
+}

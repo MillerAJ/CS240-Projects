@@ -1,0 +1,20 @@
+#include "card.h"
+
+std::map<int, std::string> Card::myMap;
+
+Card::Card(int val , int suitS){
+	value = val;
+	suit = suitS;
+	myMap.insert (std::pair<int, std::string>(1,"Clubs"));
+	myMap.insert (std::pair<int, std::string>(2,"Diamonds"));
+	myMap.insert (std::pair<int, std::string>(3,"Hearts"));
+	myMap.insert (std::pair<int, std::string>(4,"Spades"));
+}
+
+Card::getVal(){
+	return value;
+}
+
+Card::getSuit(){
+	return suit;
+}

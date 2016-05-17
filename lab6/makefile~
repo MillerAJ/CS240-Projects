@@ -1,0 +1,12 @@
+
+lab6: lab6.o tree.o 
+	g++ lab6.o tree.o  -o lab1
+
+lab6.o:
+	g++ -c lab6.cpp -o lab6.o
+
+tree.o:
+	g++ -c BSTree.cpp  -o tree.o
+clean:
+	rm -f *.o lab6
+
